@@ -1,0 +1,29 @@
+# --- Java & Compiled Class Files ---
+*.class
+*.jar
+*.war
+*.ear
+
+# --- Build Folders ---
+bin/
+target/
+build/
+out/
+
+# --- Eclipse Metadata ---
+.metadata/
+.recommenders/
+.settings/
+.project
+.classpath
+.factorypath
+
+# --- Local Operating System Files ---
+.DS_Store
+Thumbs.db
+*~
+*.swp
+
+# --- Logs & Crash Reports ---
+*.log
+hs_err_pid*
