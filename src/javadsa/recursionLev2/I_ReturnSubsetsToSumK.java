@@ -50,7 +50,7 @@ public class I_ReturnSubsetsToSumK {
 		if(currentSum==k) {
 			res.add(new ArrayList<>(current));
 		}
-		if(ind==a.length || currentSum > k)
+		if(ind==a.length || currentSum >= k)
 			return;
 		
 		for(int i=ind; i < a.length; i++) {
