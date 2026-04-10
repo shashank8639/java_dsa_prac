@@ -28,9 +28,9 @@ public class I_TripletSum_Med {
 
 	public static void main(String[] args) {
 
-			int[] a = {5, 5, 4, 4, 5, 4};
+			int[] a = {1,1,2,3,3,4,5,5,6};
 			int sum = 13;
-			int tripletCount = findTriplet(a, sum);
+			int tripletCount = countTriplets(a, sum);
 			System.out.println("No. of triplets are: "+tripletCount);
 			
 			int[] b = {2, -5, 8, -6, 0, 5, 10, 11, -3};
@@ -39,6 +39,54 @@ public class I_TripletSum_Med {
 			System.out.println("No. of triplets are: "+tripletCount);
 	}
 
+	public static int countTriplets(int[] arr, int x) {
+	    Arrays.sort(arr);
+	    int n = arr.length;
+	    int count = 0;
+	    
+	    for (int i = 0; i < n - 2; i++) {
+	        int left = i + 1;
+	        int right = n - 1;
+	        int target = x - arr[i];
+	        
+	        while (left < right) {
+	            int sum = arr[left] + arr[right];
+	            
+	            if (sum < target) {
+	                left++;
+	            } else if (sum > target) {
+	                right--;
+	            } else {
+	                if (arr[left] == arr[right]) {
+	                    int freq = right - left + 1;
+	                    count += (freq * (freq - 1)) / 2;
+	                    break;
+	                } else {
+	                    int leftVal = arr[left];
+	                    int leftCount = 0;
+	                    int l = left;
+	                    while (l <= right && arr[l] == leftVal) {
+	                        leftCount++;
+	                        l++;
+	                    }
+	                    
+	                    int rightVal = arr[right];
+	                    int rightCount = 0;
+	                    int r = right;
+	                    while (r >= left && arr[r] == rightVal) {
+	                        rightCount++;
+	                        r--;
+	                    }
+	                    
+	                    count += leftCount * rightCount;
+	                    left = l;
+	                    right = r;
+	                }
+	            }
+	        }
+	    }
+	    return count;
+	}
 	public static int findTriplet(int[] arr, int x) {
 	    Arrays.sort(arr);  // O(n log n) - negligible compared to n?
 	    int count = 0;
