@@ -1,6 +1,6 @@
 package javadsa.linklistLev1;
 
-public class UseNodeCRUD {
+public class B_UseNodeCRUD {
 
 	// create LinkedList Nodes with hardCoded data
 	private static Node<Integer> createNodeList() {

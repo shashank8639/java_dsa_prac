@@ -2,7 +2,7 @@ package javadsa.linklistLev1;
 
 import java.util.Scanner;
 
-public class UseNodeLL {
+public class A_UseNodeLL {
 
 	public static void main(String[] args) {
 
