@@ -62,20 +62,27 @@ public class J_PairSum_Medium {
 		if (n < 2)
 			return 0;
 
+		//sorting the elems in Ascending order
 		Arrays.sort(a);
 		int count = 0;
 		int left = 0, right = n - 1;
 		while (left < right) {
+			//checks is target Sum with elems
 			if (a[left] + a[right] < sum)
 				left++;
 			else if (a[left] + a[right] > sum)
 				right--;
 			else {
+				//found a pair
+				
+				//case 1: checks whether the both left & right are equal at the end of checking all elements when left==right
 				if (a[left] == a[right]) {
 					int freq = right - left + 1;
 					count += (freq * (freq - 1)) / 2;
 					break;
 				}
+				
+				//case 2: checking the left element is repeated or not, same as right elem repeats or not
 				int leftVal = a[left];
 				int l = left, r = right;
 				int leftCount = 0, rightCount = 0;
