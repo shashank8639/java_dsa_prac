@@ -62,7 +62,7 @@ public class C_ReverseLLRecursive {
 		if(head==null || head.next==null) return head;
 			
 		Node<Integer> revHead = head;
-		Node<Integer> prev = head,current = head.next;
+		Node<Integer> prev = head,current = head.next; //head.next is tail of reverselist
 
 		revHead = reverseRec(head.next);
 		current.next = head;
