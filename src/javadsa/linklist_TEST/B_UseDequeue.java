@@ -116,7 +116,7 @@ class Dequeue {
 	}
 	
 }
-public class UseDequeue {
+public class B_UseDequeue {
 
 	public static void main(String[] args) {
 

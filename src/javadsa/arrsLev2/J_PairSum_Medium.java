@@ -76,18 +76,23 @@ public class J_PairSum_Medium {
 					count += (freq * (freq - 1)) / 2;
 					break;
 				}
-				int leftCount = 1, rightCount = 1;
-				while (left + 1 <= right && a[left] == a[left + 1]) {
+				int leftVal = a[left];
+				int l = left, r = right;
+				int leftCount = 0, rightCount = 0;
+				while (l <= right && a[l] == leftVal) {
 					leftCount++;
-					left++;
+					l++;
 				}
-				while (right - 1 >= left && a[right] == a[right - 1]) {
+				
+				int rightVal = a[right];
+				
+				while (r >= left && a[r] == rightVal) {
 					rightCount++;
-					right--;
+					r--;
 				}
 				count += leftCount * rightCount;
-				left++;
-				right--;
+				left = l;
+				right = r;
 
 			}
 		}
